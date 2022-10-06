@@ -4,7 +4,7 @@ function Home() {
     return (
         <div className="Home">
             <Nav />
-            Home
+            Welcome to Fake Store! We have all the fake stuff!
         </div>
     );
 }
