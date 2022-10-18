@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Nav from './Nav';
 import Cart from './Cart';
 import Item from './Item';
@@ -19,18 +19,18 @@ function Shop() {
         if (cart.find((cartCheck) => cartCheck.id === id)) {
             // item is already in cart
             const index = cart.findIndex((cartItem) => cartItem.id === id);
-            const newCart = cart;
+            const newCart = [...cart];
 
             newCart[index].qty += 1;
-            setCart([newCart]);
+            setCart(newCart);
+            console.log(id);
+            console.log(newCart);
         } else {
             item.qty = 1;
             setCart([...cart, item]);
+            console.log(id);
+            console.log([...cart, item]);
         }
-
-        //something with the keys.. Cheryl's snoring so loudly I can't concentrate
-        console.log(id);
-        console.log(cart);
     };
 
     return (
