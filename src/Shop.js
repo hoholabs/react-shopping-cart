@@ -15,8 +15,23 @@ function Shop() {
 
     const addToCart = (id) => {
         console.log(id);
-        const item = items.find((item) => item.id === id);
-        setCart([...cart, item]);
+        const item = items.find((shopItem) => shopItem.id === id);
+
+        if (cart.find((cartCheck) => cartCheck.id === id)) {
+            // item is already in cart
+            const index = cart.findIndex((cartItem) => cartItem.id === id);
+            const newCart = cart;
+
+            // START
+            // HERE
+            // IDK IT DONT WORK
+
+            newCart[index].qty += 1;
+            setCart(newCart);
+        } else {
+            item.qty = 1;
+            setCart([...cart, item]);
+        }
     };
 
     return (
