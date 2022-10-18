@@ -14,7 +14,6 @@ function Shop() {
     const [cart, setCart] = useState([]);
 
     const addToCart = (id) => {
-        console.log(id);
         const item = items.find((shopItem) => shopItem.id === id);
 
         if (cart.find((cartCheck) => cartCheck.id === id)) {
@@ -22,16 +21,16 @@ function Shop() {
             const index = cart.findIndex((cartItem) => cartItem.id === id);
             const newCart = cart;
 
-            // START
-            // HERE
-            // IDK IT DONT WORK
-
             newCart[index].qty += 1;
-            setCart(newCart);
+            setCart([newCart]);
         } else {
             item.qty = 1;
             setCart([...cart, item]);
         }
+
+        //something with the keys.. Cheryl's snoring so loudly I can't concentrate
+        console.log(id);
+        console.log(cart);
     };
 
     return (
