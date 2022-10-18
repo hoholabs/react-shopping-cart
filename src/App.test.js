@@ -14,6 +14,17 @@ test('clicking shop takes you to the shop', () => {
     render(<App />);
     const shopButton = screen.getByRole('link', { name: 'Shop' });
     userEvent.click(shopButton);
-    const thingus = screen.getByText(/thingus/i);
-    expect(thingus).toBeInTheDocument();
+    const cartButton = screen.getByRole('button', { name: 'Cart' });
+    expect(cartButton).toBeInTheDocument();
+});
+
+test('adding items updates the total', () => {
+    render(<App />);
+    const shopButton = screen.getByRole('link', { name: 'Shop' });
+    userEvent.click(shopButton);
+    const total = screen.getByTestId('total');
+    expect(total.textContent).toMatch('Total :0');
+    const addButtons = screen.getAllByRole('button', { name: 'Add To Cart' });
+    userEvent.click(addButtons[0]);
+    expect(total.textContent).not.toMatch('Total :0');
 });
