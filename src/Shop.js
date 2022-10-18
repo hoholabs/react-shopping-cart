@@ -20,8 +20,7 @@ function Shop() {
 
         //this is really weird and probably unnecessary.. but I just wanted to get it working
         const data = new FormData(event.target);
-        const qty = data.get('qty');
-        console.log(qty);
+        const qty = parseInt(data.get('qty'));
 
         if (cart.find((cartCheck) => cartCheck.id === id)) {
             // item is already in cart

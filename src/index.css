@@ -28,9 +28,21 @@ nav ul {
     grid-column-start: 1;
     list-style: none;
     display: grid;
-    grid-template-columns: 10em 5em 5em 3em 3em 10em;
+    grid-template-columns: 10em 5em 15em;
     grid-gap: 1em;
     margin: 2em;
     padding: 1em;
     border-bottom: solid black 2px;
+    align-items: center;
+}
+
+.item form {
+    display: grid;
+    grid-template-columns: 2em 2em 2em 10em;
+    justify-content: center;
+    justify-items: center;
+}
+
+.item button {
+    margin-left: 1em;
 }
