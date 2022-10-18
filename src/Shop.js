@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Nav from './Nav';
 import Cart from './Cart';
 import Item from './Item';
 import { v4 as uuid } from 'uuid';
 
 const items = [
-    { name: 'thing', price: '2.00', id: uuid() },
-    { name: 'thingy', price: '3.50', id: uuid() },
-    { name: 'thingus', price: '4.75', id: uuid() }
+    { name: 'thing', price: 2.0, id: uuid() },
+    { name: 'thingy', price: 3.5, id: uuid() },
+    { name: 'thingus', price: 4.75, id: uuid() }
 ];
 
 function Shop() {
     const [cart, setCart] = useState([]);
+    const [total, setTotal] = useState(0);
 
     const addToCart = (id) => {
         const item = items.find((shopItem) => shopItem.id === id);
@@ -20,26 +21,31 @@ function Shop() {
             // item is already in cart
             const index = cart.findIndex((cartItem) => cartItem.id === id);
             const newCart = [...cart];
+            const item = newCart[index];
 
-            newCart[index].qty += 1;
+            item.qty += 1;
             setCart(newCart);
-            console.log(id);
-            console.log(newCart);
+            setTotal(total + item.price);
+            console.log(total);
         } else {
+            // add item to cart
             item.qty = 1;
             setCart([...cart, item]);
-            console.log(id);
-            console.log([...cart, item]);
+            setTotal(total + item.price);
+            console.log(total);
         }
     };
 
     return (
         <div className="Shop">
             <Nav />
-            <Cart cart={cart} />
-            {items.map((item) => {
-                return <Item {...item} key={item.id} add={addToCart} />;
-            })}
+            <div id="shop-page">
+                {items.map((item) => {
+                    return <Item {...item} key={item.id} add={addToCart} />;
+                })}
+                <Cart cart={cart} total={total} />
+            </div>
+            {console.log(cart)}
         </div>
     );
 }

@@ -6,17 +6,26 @@ nav ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
+    list-style-type: none;
 }
 
-nav li {
-    list-style-type: none;
+#shop-page {
+    display: grid;
+    grid-template-columns: 80vw 1fr;
 }
 
 #cart {
     border: solid red 2px;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    display: grid;
+    list-style-type: none;
+    grid-auto-rows: 3em;
 }
 
 .item {
+    grid-column-start: 1;
     list-style: none;
     display: grid;
     grid-template-columns: 10em 5em 5em 3em 3em 10em;
