@@ -14,25 +14,28 @@ function Shop() {
     const [cart, setCart] = useState([]);
     const [total, setTotal] = useState(0);
 
-    const addToCart = (id) => {
+    const addToCart = (event, id) => {
+        event.preventDefault();
         const item = items.find((shopItem) => shopItem.id === id);
+
+        //this is really weird and probably unnecessary.. but I just wanted to get it working
+        const data = new FormData(event.target);
+        const qty = data.get('qty');
+        console.log(qty);
 
         if (cart.find((cartCheck) => cartCheck.id === id)) {
             // item is already in cart
             const index = cart.findIndex((cartItem) => cartItem.id === id);
             const newCart = [...cart];
             const item = newCart[index];
-
-            item.qty += 1;
+            item.qty += qty;
             setCart(newCart);
-            setTotal(total + item.price);
-            console.log(total);
+            setTotal(total + item.price * qty);
         } else {
             // add item to cart
-            item.qty = 1;
+            item.qty = qty;
             setCart([...cart, item]);
-            setTotal(total + item.price);
-            console.log(total);
+            setTotal(total + item.price * qty);
         }
     };
 
@@ -45,7 +48,6 @@ function Shop() {
                 })}
                 <Cart cart={cart} total={total} />
             </div>
-            {console.log(cart)}
         </div>
     );
 }
