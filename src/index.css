@@ -15,3 +15,13 @@ nav li {
 #cart {
     border: solid red 2px;
 }
+
+.item {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 10em 5em 5em 3em 3em 10em;
+    grid-gap: 1em;
+    margin: 2em;
+    padding: 1em;
+    border-bottom: solid black 2px;
+}

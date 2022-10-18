@@ -5,9 +5,9 @@ import Item from './Item';
 import { v4 as uuid } from 'uuid';
 
 const items = [
-    { name: 'thing', price: '2', id: uuid() },
-    { name: 'thingy', price: '3', id: uuid() },
-    { name: 'thingus', price: '4', id: uuid() }
+    { name: 'thing', price: '2.00', id: uuid() },
+    { name: 'thingy', price: '3.50', id: uuid() },
+    { name: 'thingus', price: '4.75', id: uuid() }
 ];
 
 function Shop() {

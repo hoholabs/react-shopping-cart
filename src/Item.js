@@ -1,7 +1,8 @@
 function Item(props) {
     return (
-        <div>
-            {props.name}:{props.price}
+        <li className="item">
+            <p>{props.name}</p>
+            <p>${props.price}</p>
             <input></input>
             <button>+</button>
             <button>-</button>
@@ -12,7 +13,7 @@ function Item(props) {
             >
                 Add To Cart
             </button>
-        </div>
+        </li>
     );
 }
 
