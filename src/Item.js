@@ -8,17 +8,17 @@ function Item(props) {
                     props.add(event, props.id);
                 }}
             >
-                <input name="qty" defaultValue="1"></input>
-                <button>+</button>
-                <button>-</button>
-                <button
-                    type="submit"
-                    // onClick={(event) => {
-                    //     props.add(props.id, event);
-                    // }}
-                >
-                    Add To Cart
-                </button>
+                <input
+                    type="text"
+                    name="qty"
+                    value={props.qty}
+                    onChange={(event) => {
+                        props.changeQty(event, props.id);
+                    }}
+                ></input>
+                <button type="button">+</button>
+                <button type="button">-</button>
+                <button type="submit">Add To Cart</button>
             </form>
         </li>
     );
