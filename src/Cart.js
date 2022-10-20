@@ -7,7 +7,7 @@ function Cart(props) {
             {props.cart.map((item) => {
                 return (
                     <li key={uuid()}>
-                        {item.name} {item.qty} {item.price * item.qty}
+                        {item.name} {item.cartQty} {item.price * item.cartQty}
                     </li>
                 );
             })}

@@ -11,7 +11,7 @@ function Item(props) {
                 <input
                     type="text"
                     name="qty"
-                    value={props.qty}
+                    value={props.shelfQty}
                     onChange={(event) => {
                         props.changeQty(event, props.id);
                     }}
