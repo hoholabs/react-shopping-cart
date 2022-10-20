@@ -21,9 +21,15 @@ function Item(props) {
                         props.changeQty(event, props.id);
                     }}
                 ></input>
-                <button type="button">+</button>
-                <button type="button">-</button>
-                <button type="submit">Add To Cart</button>
+                <button className="incdec-btn" type="button">
+                    +
+                </button>
+                <button className="incdec-btn" type="button">
+                    -
+                </button>
+                <button className="add-btn" type="submit">
+                    Add To Cart
+                </button>
             </form>
         </li>
     );

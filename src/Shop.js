@@ -7,6 +7,7 @@ import { v4 as uuid } from 'uuid';
 const items = [
     { name: 'thing', price: 2.0, shelfQty: 1, cartQty: 0, id: uuid() },
     { name: 'thingy', price: 3.5, shelfQty: 1, cartQty: 0, id: uuid() },
+    { name: 'thingamajig', price: 1.25, shelfQty: 1, cartQty: 0, id: uuid() },
     { name: 'thingus', price: 4.75, shelfQty: 1, cartQty: 0, id: uuid() }
 ];
 
@@ -97,8 +98,8 @@ function Shop() {
                         />
                     );
                 })}
-                <Cart cart={cart} total={total} checkOut={checkOut} />
             </div>
+            <Cart cart={cart} total={total} checkOut={checkOut} />
         </div>
     );
 }
