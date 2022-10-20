@@ -12,7 +12,7 @@ function Cart(props) {
                 );
             })}
             <div data-testid="total">Total :{props.total}</div>
-            <button>Check Out</button>
+            <button onClick={props.checkOut}>Check Out</button>
         </div>
     );
 }

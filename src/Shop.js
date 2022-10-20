@@ -79,6 +79,10 @@ function Shop() {
         setShelf(newShelf);
     };
 
+    const checkOut = () => {
+        alert('Check out does not function');
+    };
+
     return (
         <div className="Shop">
             <Nav />
@@ -93,7 +97,7 @@ function Shop() {
                         />
                     );
                 })}
-                <Cart cart={cart} total={total} />
+                <Cart cart={cart} total={total} checkOut={checkOut} />
             </div>
         </div>
     );
