@@ -2,7 +2,12 @@ function Item(props) {
     return (
         <li className="item">
             <p>{props.name}</p>
-            <p>${props.price}</p>
+            <p>
+                {new Intl.NumberFormat('en-IN', {
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(props.price)}
+            </p>
             <form
                 onSubmit={(event) => {
                     props.add(event, props.id);
