@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Nav from './Nav';
-import Cart from './Cart';
 import Item from './Item';
 import { v4 as uuid } from 'uuid';
 
@@ -86,7 +85,7 @@ function Shop() {
 
     return (
         <div className="Shop">
-            <Nav />
+            <Nav cart={cart} total={total} checkOut={checkOut} />
             <div id="shop-page">
                 {items.map((item) => {
                     return (
@@ -99,7 +98,6 @@ function Shop() {
                     );
                 })}
             </div>
-            <Cart cart={cart} total={total} checkOut={checkOut} />
         </div>
     );
 }

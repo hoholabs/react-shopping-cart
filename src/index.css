@@ -7,14 +7,13 @@ body {
 
 nav {
     height: 5em;
-}
-
-nav ul {
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-auto-flow: column;
     justify-items: center;
-    list-style-type: none;
+
     padding: 0;
+    width: 100%;
 }
 
 #shop-page {
@@ -24,18 +23,11 @@ nav ul {
 
 #cart {
     background-color: aliceblue;
-    position: fixed;
-    top: 5em;
-    right: 0;
-    width: 15em;
     border: solid black 2px;
     display: grid;
     list-style-type: none;
     grid-auto-rows: 3em;
-}
-
-#cart button {
-    border: none;
+    width: 100%;
 }
 
 .item {
