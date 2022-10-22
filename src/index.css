@@ -6,14 +6,15 @@ body {
 }
 
 nav {
-    background-color: aquamarine;
+    height: 5em;
+}
+
+nav ul {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     grid-auto-flow: column;
     justify-items: center;
-    align-items: center;
+    list-style-type: none;
     padding: 0;
-    width: 100%;
 }
 
 #shop-page {
@@ -23,11 +24,18 @@ nav {
 
 #cart {
     background-color: aliceblue;
-    /* border: solid black 2px; */
+    position: fixed;
+    top: 5em;
+    right: 0;
+    width: 15em;
+    border: solid black 2px;
     display: grid;
     list-style-type: none;
     grid-auto-rows: 3em;
-    width: 100%;
+}
+
+#cart button {
+    border: none;
 }
 
 .item {

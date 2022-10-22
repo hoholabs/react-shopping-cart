@@ -16,29 +16,6 @@ function Shop() {
     const [cart, setCart] = useState([]);
     const [total, setTotal] = useState(0);
 
-    // const addToCartOld = (event, id) => {
-    //     event.preventDefault();
-    //     const cartItem = items.find((shopItem) => shopItem.id === id);
-
-    //     const data = new FormData(event.target);
-    //     const inputQty = parseInt(data.get('qty'));
-
-    //     if (cart.find((cartCheck) => cartCheck.id === id)) {
-    //         // item is already in cart
-    //         const index = cart.findIndex((cartItem) => cartItem.id === id);
-    //         const newCart = [...cart];
-    //         const cartItem = newCart[index];
-    //         cartItem.qty += inputQty;
-    //         setCart(newCart);
-    //         setTotal(total + cartItem.price * inputQty);
-    //     } else {
-    //         // add item to cart
-    //         cartItem.qty = inputQty;
-    //         setCart([...cart, cartItem]);
-    //         setTotal(total + cartItem.price * inputQty);
-    //     }
-    // };
-
     const addToCart = (event, id) => {
         event.preventDefault();
 
