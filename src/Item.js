@@ -1,18 +1,19 @@
 function Item(props) {
     return (
         <li className="item">
-            <p>{props.name}</p>
-            <p>
-                {new Intl.NumberFormat('en-IN', {
-                    style: 'currency',
-                    currency: 'USD'
-                }).format(props.price)}
-            </p>
             <form
                 onSubmit={(event) => {
                     props.add(event, props.id);
                 }}
             >
+                <h2 className="item-name">{props.name}</h2>
+                <p className="item-price">
+                    {new Intl.NumberFormat('en-IN', {
+                        style: 'currency',
+                        currency: 'USD'
+                    }).format(props.price)}
+                </p>
+
                 <input
                     type="text"
                     name="qty"
@@ -22,7 +23,7 @@ function Item(props) {
                     }}
                 ></input>
                 <button
-                    className="incdec-btn"
+                    className="inc-btn"
                     type="button"
                     onClick={() => {
                         props.incdec(props.id, 1);
@@ -31,7 +32,7 @@ function Item(props) {
                     +
                 </button>
                 <button
-                    className="incdec-btn"
+                    className="dec-btn"
                     type="button"
                     onClick={() => {
                         props.incdec(props.id, -1);

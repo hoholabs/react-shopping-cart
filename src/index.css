@@ -5,6 +5,10 @@ body {
     padding: 0;
 }
 
+:root {
+    --soft-border: rgba(100, 74, 8, 0.25);
+}
+
 nav {
     height: 5rem;
     background-color: goldenrod;
@@ -37,7 +41,8 @@ nav a {
 
 #shop-page {
     display: grid;
-    /* border-top: solid black 2px; */
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80vw;
 }
 
 #cart {
@@ -45,7 +50,7 @@ nav a {
     position: fixed;
     top: 5em;
     right: 0;
-    width: 15em;
+    width: 20vw;
     border: solid rgb(100, 74, 8, 0.5) 2px;
     display: grid;
     list-style-type: none;
@@ -54,6 +59,7 @@ nav a {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
     border-top: none;
+    grid-row-end: -1;
 }
 
 #cart button {
@@ -82,27 +88,75 @@ nav a {
 }
 
 .item {
-    grid-column-start: 1;
+    border: solid var(--soft-border) 2px;
+    border-radius: 1rem;
     list-style: none;
-    display: grid;
-    grid-template-columns: 10em 7em 15em;
-    padding-bottom: 2em;
-    height: 2em;
-    border-bottom: solid rgba(100, 74, 8, 0.25) 2px;
-    align-items: center;
+    padding: 1rem;
+    margin: 1rem;
+    height: 10rem;
+    color: rgb(127, 97, 21);
 }
 
 .item form {
     display: grid;
-    grid-auto-flow: column;
+    grid-template-columns: auto auto 5em auto;
+    grid-template-rows: 1fr 1fr;
     justify-content: center;
-    justify-items: center;
+    align-items: center;
+    height: 100%;
+}
+
+.item .item-name {
+    grid-column-start: 1;
+    grid-column-end: -2;
+    justify-self: end;
+}
+
+.item .item-price {
+    grid-column-end: -1;
+    justify-self: center;
 }
 
 .item form input {
-    width: 3em;
+    padding: 0.4rem;
+    /* width: 3em; */
+    height: 1rem;
+    grid-row-start: 2;
+    grid-column-end: -2;
+    border: none;
+    background-color: rgba(218, 165, 32, 0.1);
+    border-top: solid var(--soft-border) 2px;
+    border-bottom: solid var(--soft-border) 2px;
+    color: rgb(127, 97, 21);
+}
+
+.item form button {
+    grid-row-start: 2;
+    padding: 0.4rem;
+    border: 0px;
+    /* border-radius: 0.2rem; */
+    background-color: rgba(218, 165, 32, 0.1);
+    border-top: solid var(--soft-border) 2px;
+    border-bottom: solid var(--soft-border) 2px;
+    color: rgb(127, 97, 21);
+}
+.item form .inc-btn {
+    grid-column-start: 1;
+    /* background-color: rgb(216, 255, 242); */
+    border-left: solid var(--soft-border) 2px;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+}
+.item form .dec-btn {
+    grid-column-start: 2;
+    /* background-color: blanchedalmond; */
 }
 
 .item form .add-btn {
-    margin-left: 2em;
+    margin-left: 2rem;
+    grid-column-end: -1;
+    margin: auto;
+    border-right: solid var(--soft-border) 2px;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
 }
