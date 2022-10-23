@@ -1,7 +1,7 @@
 *,
 html,
 body {
-    margin: 0;
+    margin: 0rem;
     padding: 0;
 }
 
@@ -9,6 +9,8 @@ nav {
     height: 5rem;
     background-color: goldenrod;
     font-size: 3em;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 
 nav ul {
@@ -23,6 +25,8 @@ nav ul {
 
 nav a {
     text-decoration: none;
+    /* color: rgb(100, 74, 8); */
+    color: rgba(255, 255, 255, 0.9);
 }
 
 #home-page h1 {
@@ -33,7 +37,7 @@ nav a {
 
 #shop-page {
     display: grid;
-    border-top: solid black 2px;
+    /* border-top: solid black 2px; */
 }
 
 #cart {
@@ -42,13 +46,14 @@ nav a {
     top: 5em;
     right: 0;
     width: 15em;
-    border: solid black 2px;
+    border: solid rgb(100, 74, 8, 0.5) 2px;
     display: grid;
     list-style-type: none;
     grid-auto-rows: 3em;
     border-radius: 0.7rem;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
+    border-top: none;
 }
 
 #cart button {
@@ -83,7 +88,7 @@ nav a {
     grid-template-columns: 10em 7em 15em;
     padding-bottom: 2em;
     height: 2em;
-    border-bottom: solid rgb(157, 157, 157) 2px;
+    border-bottom: solid rgba(100, 74, 8, 0.25) 2px;
     align-items: center;
 }
 
