@@ -2,9 +2,9 @@ import Nav from './Nav';
 
 function Home() {
     return (
-        <div className="Home">
+        <div id="home-page">
             <Nav />
-            Welcome to Fake Store! We have all the fake stuff!
+            <h1>Welcome to Fake Store! We have all the fake stuff!</h1>
         </div>
     );
 }

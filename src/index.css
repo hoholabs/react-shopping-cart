@@ -6,15 +6,29 @@ body {
 }
 
 nav {
-    height: 5em;
+    height: 5rem;
+    background-color: goldenrod;
+    font-size: 3em;
 }
 
 nav ul {
     display: grid;
     grid-auto-flow: column;
     justify-items: center;
+    height: 100%;
     list-style-type: none;
     padding: 0;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+#home-page h1 {
+    color: darkgoldenrod;
+    text-align: center;
+    padding: 2rem;
 }
 
 #shop-page {
@@ -32,10 +46,34 @@ nav ul {
     display: grid;
     list-style-type: none;
     grid-auto-rows: 3em;
+    border-radius: 0.7rem;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
 }
 
 #cart button {
     border: none;
+    background-color: rgb(87, 210, 149);
+}
+
+/* #cart-button {
+    border-top-left-radius: 0.7rem;
+    border-top-right-radius: 0.7rem;
+} */
+
+#checkout-button {
+    border-bottom-left-radius: 0.7rem;
+    border-bottom-right-radius: 0.7rem;
+}
+
+.cart-item {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 0.3fr 0.5fr;
+}
+
+#total {
+    display: grid;
 }
 
 .item {
