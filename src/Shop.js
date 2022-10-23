@@ -24,7 +24,9 @@ function Shop() {
         const data = new FormData(event.target);
         const inputQty = parseInt(data.get('qty'));
 
-        if (cart.find((cartCheck) => cartCheck.id === id)) {
+        if (inputQty <= 0) {
+            // invalid quantity, do nothing
+        } else if (cart.find((cartCheck) => cartCheck.id === id)) {
             // item is already in cart
             //update cart quntity
 
