@@ -59,6 +59,18 @@ function Shop() {
         setShelf(newShelf);
     };
 
+    const incdec = (id, qty) => {
+        console.log(qty + ' ' + id);
+        const index = shelf.findIndex((shelfItem) => shelfItem.id === id);
+        const newShelf = [...shelf];
+        newShelf[index].shelfQty += qty;
+        if (newShelf[index].shelfQty <= 0) {
+            newShelf[index].shelfQty = 1;
+        }
+
+        setShelf(newShelf);
+    };
+
     const checkOut = () => {
         alert('Check out does not function');
     };
@@ -74,6 +86,7 @@ function Shop() {
                             key={item.id}
                             add={addToCart}
                             changeQty={changeQty}
+                            incdec={incdec}
                         />
                     );
                 })}

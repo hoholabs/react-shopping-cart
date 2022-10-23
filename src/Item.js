@@ -21,10 +21,22 @@ function Item(props) {
                         props.changeQty(event, props.id);
                     }}
                 ></input>
-                <button className="incdec-btn" type="button">
+                <button
+                    className="incdec-btn"
+                    type="button"
+                    onClick={() => {
+                        props.incdec(props.id, 1);
+                    }}
+                >
                     +
                 </button>
-                <button className="incdec-btn" type="button">
+                <button
+                    className="incdec-btn"
+                    type="button"
+                    onClick={() => {
+                        props.incdec(props.id, -1);
+                    }}
+                >
                     -
                 </button>
                 <button className="add-btn" type="submit">
