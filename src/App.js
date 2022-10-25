@@ -4,7 +4,7 @@ import Shop from './Shop';
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/Shop" element={<Shop />} />
