@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/hoholabs/react-shopping-cart/static/css/main.f94e7b8c.css",
+    "main.js": "/hoholabs/react-shopping-cart/static/js/main.66630fa4.js",
+    "static/js/787.fe0e4ddc.chunk.js": "/hoholabs/react-shopping-cart/static/js/787.fe0e4ddc.chunk.js",
+    "index.html": "/hoholabs/react-shopping-cart/index.html",
+    "main.f94e7b8c.css.map": "/hoholabs/react-shopping-cart/static/css/main.f94e7b8c.css.map",
+    "main.66630fa4.js.map": "/hoholabs/react-shopping-cart/static/js/main.66630fa4.js.map",
+    "787.fe0e4ddc.chunk.js.map": "/hoholabs/react-shopping-cart/static/js/787.fe0e4ddc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f94e7b8c.css",
+    "static/js/main.66630fa4.js"
+  ]
+}
